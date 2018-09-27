@@ -1,6 +1,5 @@
 body {
     width: 240px;
-    background-color: #eaeaea;
 }
 
 #scrollbar input {
@@ -19,16 +18,27 @@ body {
 }
 
 #scrollbar ul li {
+    color: #949494;
     margin: 7px 0px;
     padding: 6px 5px;
     border-radius: 5px;
     list-style-type: none;
-    border: 1px solid #c3c3c3;
+    background-color: #EAE8E8;
+    border: 1px solid #D2D2D2;
 }
 
 #scrollbar ul li:hover {
     cursor: pointer;
     border-color: #fff;
+}
+
+.gray { 
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
 }
 
 #scrollbar ul li img {

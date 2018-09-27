@@ -19,14 +19,17 @@ window.onload = function () {
             var span = document.createElement("span");
             span.innerHTML = subStrings(data.shortName);
 
-            var img = document.createElement("img");
-            img.setAttribute('height', '16px');
-            img.setAttribute('width', 'auto');
-            img.setAttribute('src', data.icons[0].url);
+            var imgs = document.createElement("img");
+            imgs.setAttribute('height', '16px');
+            imgs.setAttribute('width', 'auto');
+            imgs.setAttribute('src', data.icons[0].url);
+            if(data.enabled =='false'){
+                imgs.setAttribute('class','gray');
+            }
 
             var li = document.createElement("li");
             li.setAttribute('class', data.id);
-            li.appendChild(img);
+            li.appendChild(imgs);
             li.getElementsByTagName('img')[0].after(span);
 
             var ul = document.getElementsByTagName('ul');
