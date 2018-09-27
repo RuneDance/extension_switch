@@ -29,6 +29,9 @@ window.onload = function () {
             }
 
             var li = document.createElement("li");
+            if (data.enabled) {
+                li.style.backgroundColor = '#dff0d8';
+            }
             li.setAttribute('class', data.id);
             li.appendChild(imgs);
             li.getElementsByTagName('img')[0].after(span);
