@@ -11,9 +11,12 @@ window.onload = function () {
         }
     }
 
+    /*function helloworld() {
+        console.log('HelloWorld');
+    }*/
+
     for (var i = 0; i < ls.length; i++) {
         var data = JSON.parse(ls[i]);
-
 
         if (data.type == 'extension' && data.installType == 'normal') {
             var span = document.createElement("span");
@@ -33,6 +36,7 @@ window.onload = function () {
                 li.style.backgroundColor = '#dff0d8';
             }
             li.setAttribute('class', data.id);
+            //li.setAttribute('onclick', 'helloworld()')
             li.appendChild(imgs);
             li.getElementsByTagName('img')[0].after(span);
 
@@ -40,5 +44,13 @@ window.onload = function () {
             ul[0].appendChild(li);
         }
     }
+
+    /*var lis = document.getElementsByTagName('li');
+    for (var j = 0; j < lis.length; j++) {
+        lis[j].onclick = function () {
+            console.log(lis[j].getAttribute('class'));
+        }
+    }*/
+
 
 };

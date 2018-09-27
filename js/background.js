@@ -2,7 +2,6 @@
 
 var ls = window.localStorage;
 
-
 //获取chrome扩展应用信息
 function getExtensionInfo(id, num) {
     chrome.management.get(id, function (info) {
