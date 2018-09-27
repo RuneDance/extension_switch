@@ -23,8 +23,9 @@ window.onload = function () {
             imgs.setAttribute('height', '16px');
             imgs.setAttribute('width', 'auto');
             imgs.setAttribute('src', data.icons[0].url);
-            if(data.enabled =='false'){
-                imgs.setAttribute('class','gray');
+            if (!data.enabled) {
+                imgs.setAttribute('class', 'gray');
+                span.style.color = '#949494';
             }
 
             var li = document.createElement("li");
