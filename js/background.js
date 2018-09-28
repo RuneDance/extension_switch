@@ -15,3 +15,19 @@ chrome.management.getAll(function (data) {
         getExtensionInfo(info.id, num);
     });
 });
+
+//启用/关闭chrome扩展应用
+function extensionSwitch(id) {
+    for (var i = 0; i < ls.length; i++) {
+        var data = JSON.parse(ls[i]);
+        if (data.id == id) {
+            if (data.enabled) {
+                chrome.management.setEnabled(id, false);
+            } else {
+                chrome.management.setEnabled(id, true);
+            }
+        }
+    }
+
+}
+
