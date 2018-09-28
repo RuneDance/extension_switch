@@ -42,6 +42,8 @@ window.onload = function () {
         }
     }
 
+    //启用 li:#dff0d8 img:class!=gray span:#000
+    //禁用 li:#EAE8E8 img:class=gray span:#949494
     var lis = document.getElementsByTagName('li');
     for (var j = 0; j < lis.length; j++) {
         lis[j].addEventListener('click', function (e) {
