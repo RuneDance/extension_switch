@@ -46,18 +46,28 @@ window.onload = function () {
     for (var j = 0; j < lis.length; j++) {
         lis[j].addEventListener('click', function (e) {
             var id = e.currentTarget.className;
-
-            var li = document.getElementsByClassName(id);
-            var img = li.childNodes.getElementsByTagName('img');
-            var span = li.childNodes.getElementsByTagName('span');
+            var img = e.srcElement.children[0];
+            var span = e.srcElement.children[1];
+            var li = e.currentTarget;
+            //var li = document.getElementsByClassName(id);
 
             for (var k = 0; k < ls.length; k++) {
                 var info = JSON.parse(ls[k]);
                 if (info.id == id) {
+                    //禁用
                     if (info.enabled) {
+                        img.setAttribute('class', 'gray');
+                        span.style.color = '#949494';
+                        li.style.backgroundColor = '#EAE8E8';
                         background.extensionSwitch(id, false);
+                        window.location.reload();
                     } else {
+                        //启用
+                        img.setAttribute('class', '');
+                        span.style.color = '#000';
+                        li.style.backgroundColor = '#dff0d8';
                         background.extensionSwitch(id, true);
+                        window.location.reload();
                     }
                 }
             }
