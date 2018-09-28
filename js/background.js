@@ -20,9 +20,15 @@ chrome.management.getAll(function (data) {
 function extensionSwitch(id) {
     for (var i = 0; i < ls.length; i++) {
         var data = JSON.parse(ls[i]);
+        var li = document.getElementsByClassName(id);
+        var img = li.document.getElementsByTagName('img');
+        var span = li.document.getElementsByTagName('span');
         if (data.id == id) {
             if (data.enabled) {
                 chrome.management.setEnabled(id, false);
+                li.style.backgroundColor = '#dff0d8';
+                img.setAttribute('class', '');
+                //span.style.color = '';
             } else {
                 chrome.management.setEnabled(id, true);
             }

@@ -1,6 +1,6 @@
 'use strict';
 
-document.addEventListener('DOMContentLoaded', function () {
+window.onload = function () {
     var background = chrome.extension.getBackgroundPage();
 
     var ls = window.localStorage;
@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             return str;
         }
+    }
+
+    function getExtensionId(e) {
+        var id = e.currentTarget.className;
+        background.extensionSwitch(id);
     }
 
     for (var i = 0; i < ls.length; i++) {
@@ -44,9 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var lis = document.getElementsByTagName('li');
     for (var j = 0; j < lis.length; j++) {
-        var id = lis[j].getAttribute('class');
-        lis[j].addEventListener('click', function () {
-            background.extensionSwitch(id);
-        });
+        lis[j].addEventListener('click', getExtensionId, false);
     }
-});
+
+};
+
