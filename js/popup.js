@@ -13,11 +13,6 @@ window.onload = function () {
         }
     }
 
-    function getExtensionId(e) {
-        var id = e.currentTarget.className;
-        background.extensionSwitch(id);
-    }
-
     for (var i = 0; i < ls.length; i++) {
         var data = JSON.parse(ls[i]);
 
@@ -49,7 +44,24 @@ window.onload = function () {
 
     var lis = document.getElementsByTagName('li');
     for (var j = 0; j < lis.length; j++) {
-        lis[j].addEventListener('click', getExtensionId, false);
+        lis[j].addEventListener('click', function (e) {
+            var id = e.currentTarget.className;
+
+            var li = document.getElementsByClassName(id);
+            var img = li.childNodes.getElementsByTagName('img');
+            var span = li.childNodes.getElementsByTagName('span');
+
+            for (var k = 0; k < ls.length; k++) {
+                var info = JSON.parse(ls[k]);
+                if (info.id == id) {
+                    if (info.enabled) {
+                        background.extensionSwitch(id, false);
+                    } else {
+                        background.extensionSwitch(id, true);
+                    }
+                }
+            }
+        });
     }
 
 };

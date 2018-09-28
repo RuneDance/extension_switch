@@ -17,23 +17,11 @@ chrome.management.getAll(function (data) {
 });
 
 //启用/关闭chrome扩展应用
-function extensionSwitch(id) {
-    for (var i = 0; i < ls.length; i++) {
-        var data = JSON.parse(ls[i]);
-        var li = document.getElementsByClassName(id);
-        var img = li.document.getElementsByTagName('img');
-        var span = li.document.getElementsByTagName('span');
-        if (data.id == id) {
-            if (data.enabled) {
-                chrome.management.setEnabled(id, false);
-                li.style.backgroundColor = '#dff0d8';
-                img.setAttribute('class', '');
-                //span.style.color = '';
-            } else {
-                chrome.management.setEnabled(id, true);
-            }
-        }
+function extensionSwitch(id, bool) {
+    if (bool) {
+        chrome.management.setEnabled(id, true);
+    } else {
+        chrome.management.setEnabled(id, false);
     }
-
 }
 
