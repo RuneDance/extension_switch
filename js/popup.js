@@ -1,10 +1,17 @@
 'use strict';
 
 window.onload = function () {
+    //获取 background.js 参数
     var background = chrome.extension.getBackgroundPage();
 
+    //获取浏览器本地 localStorage 对象
     var ls = window.localStorage;
 
+    /**
+     * 截取字符串长度
+     * @param str
+     * @returns {*}
+     */
     function subStrings(str) {
         if (str.length > 15) {
             return str.substring(0, 15) + ' ...';
