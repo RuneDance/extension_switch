@@ -62,13 +62,15 @@ window.onload = function () {
             var id = e.currentTarget.id;
             var img = e.currentTarget.children[0];
             var span = e.currentTarget.children[1];
-            var info = JSON.parse(background.datas);
 
-            for (var k = 0; k < info.length; k++) {
+
+            for (var k = 0; k < JSON.parse(background.datas).length; k++) {
+                var info = JSON.parse(background.datas);
                 if (info[k].id == id) {
                     var li = document.getElementById(id);
                     //禁用
                     if (info[k].enabled) {
+                        alert('禁用' + info[k].enabled);
                         img.setAttribute('class', 'gray');
                         span.setAttribute('class', 'span_disabled');
                         li.setAttribute('class', 'disabled');
@@ -78,6 +80,7 @@ window.onload = function () {
                         break;
                     } else {
                         //启用
+                        alert('启用：' + info[k].enabled);
                         img.setAttribute('class', '');
                         span.setAttribute('class', '');
                         li.setAttribute('class', 'enabled');
