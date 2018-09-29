@@ -4,13 +4,19 @@ body {
 
 #scrollbar input {
     height: 30px;
-    width: 240px;
+    width: 233px;
+    padding-left: 5px;
     border-radius: 5px;
     border: 1px solid #d2d2d2;
 }
 
 #scrollbar input:hover {
     border-color: #888;
+}
+
+#scrollbar input:focus{
+    outline: none;
+    border: 1px solid #00a1ff;
 }
 
 #scrollbar ul {
@@ -28,7 +34,8 @@ body {
 
 #scrollbar ul li:hover {
     cursor: pointer;
-    border-color: #888;
+    /*border-color: #888;*/
+    border-color: #00a1ff;
 }
 
 .gray {
@@ -42,10 +49,12 @@ body {
 
 #scrollbar ul li img {
     margin-right: 6px;
+    margin-bottom: 4px;
+    vertical-align: middle;
 }
 
 #scrollbar ul li span {
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .scrollbar {

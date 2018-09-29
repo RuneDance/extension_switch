@@ -31,7 +31,7 @@ window.onload = function () {
 
             var li = document.createElement("li");
             if (data.enabled) {
-                li.style.backgroundColor = '#dff0d8';
+                li.style.backgroundColor = '#d9ffca';
             }
             li.setAttribute('class', data.id);
             li.appendChild(imgs);
@@ -42,7 +42,7 @@ window.onload = function () {
         }
     }
 
-    //启用 li:#dff0d8 img:class!=gray span:#000
+    //启用 li:##d9ffca img:class!=gray span:#000
     //禁用 li:#EAE8E8 img:class=gray span:#949494
     var lis = document.getElementsByTagName('li');
     for (var j = 0; j < lis.length; j++) {
@@ -77,4 +77,3 @@ window.onload = function () {
     }
 
 };
-
